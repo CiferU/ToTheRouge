@@ -1,0 +1,37 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class UImanager : MonoBehaviour
+{
+    public GameObject optionsPanel;
+
+    public void OptionsPanel() {
+
+        Time.timeScale = 0;
+        optionsPanel.SetActive(true);
+    }
+
+    public void Return() 
+    {
+        Time.timeScale = 1;
+        optionsPanel.SetActive(false);
+    }
+
+    public void BackToMainMenu() 
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Level 1");
+    }
+}
